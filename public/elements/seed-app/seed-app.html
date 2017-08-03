@@ -93,7 +93,7 @@
           <!-- /testing route and view -->
           <app-route
             route="[[_route]]"
-            pattern="/baba"
+            pattern="/user"
             active="{{_babaJi}}">
           </app-route>
           <px-view
@@ -141,8 +141,8 @@
           value: function() {
             return [
               {
-                "label": "Baba ji",
-                "path": "/baba",
+                "label": "User Data",
+                "path": "/user",
                 "icon": "fa-user-times"
               },
               {
@@ -150,19 +150,6 @@
                 "path": "/about",
                 "icon": "fa-info-circle"
               }
-              //Uncomment this block to show the Simple Asset navigation item on the menu.
-               // asset-nav-item
-              // ,{
-              //   "label": "Simple Asset",
-              //   "path": "/simple-asset",
-              //   "icon": "fa-sitemap"
-              // }, 
-              // {
-              //   "label": "Dashboard",
-              //   "path": "/rmd",
-              //   "icon": "fa-tachometer"
-              // }
-              // end asset-nav-item 
             ]
           }
         },
@@ -202,7 +189,7 @@
         // set default route to /rmd
         var l = window.location;
         if((l.hash === "#/" || l.hash === "") && l.pathname === "/") {
-          l.hash = "/baba";
+          l.hash = "/user";
         }
       },
 
