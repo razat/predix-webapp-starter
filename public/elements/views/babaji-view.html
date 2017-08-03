@@ -1,0 +1,41 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/px-view-header/px-view-header.html">
+<link rel="import" href="../../bower_components/px-card/px-card.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/marked-element/marked-element.html">
+<link rel="import" href="../../bower_components/px-data-table/px-data-table.html">
+
+<dom-module id="babaji-view">
+  <template>
+    <px-card id="myCard" header-text="Customer Data">
+      <style is="custom-style">
+        div.markdown-html > h2 {
+          margin-top: 0;
+        }
+      </style>
+          <px-data-table striped table-data="{{babaData}}" include-all-columns="true"></px-data-table>
+    </px-card>
+
+    <iron-ajax id="aboutContentAjaxEl"  headers='{"Accept": "*/*"}' handle-as="json" on-response="handleResponse"> </iron-ajax>
+  </template>
+  <script>
+    Polymer({
+      is: 'babaji-view',
+      properties: {
+        babaData : {
+          type: Array,
+        }
+      },
+      ready: function() {
+        var that = this;
+       this.$.aboutContentAjaxEl.url =  "https://predix-jpa-vikashpostgresql.run.aws-usw02-pr.ice.predix.io/customers/";
+       this.$.aboutContentAjaxEl.generateRequest();
+      },
+      handleResponse: function(evt) {
+                  this.babaData =(evt.detail.response);
+
+
+      }
+    });
+  </script>
+</dom-module>
