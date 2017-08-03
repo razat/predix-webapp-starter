@@ -231,8 +231,8 @@ Component will query for new data when tags or dates are changed.
         console.log('fetching timeseries data', tags, range);
         this.set('tsChartData', []);
         this.set('tsSeriesConfig', {});
-        this.$.tsAjaxEl.url = '/api/predix-timeseries/v1/datapoints';
-        this.$.tsAjaxEl.method = 'POST';
+        this.$.tsAjaxEl.url = '/timeseries' //'https://winddata-service-demo.run.aws-usw02-pr.ice.predix.io/services/windservices/yearly_data/sensor_id/Compressor-2015:CompressionRatio';   // '/api/predix-timeseries/v1/datapoints';
+        this.$.tsAjaxEl.method = 'GET';
         this.$.tsAjaxEl.body = query;
         this.$.tsAjaxEl.generateRequest();
       },
@@ -319,6 +319,8 @@ Component will query for new data when tags or dates are changed.
       },
 
       _buildWsUrl: function() {
+        console.log(this.wsUrl)
+        return 'wss://gateway-predix-data-services.run.aws-usw02-pr.ice.predix.io/v1/stream/messages'+ this.wsUrl;
         console.log('_buildWsUrl', this.wsUrl);
         if (this.wsUrl && this.wsUrl.indexOf('wss://') === 0) {
           // looks like there's a real web socket server running in the cloud.

@@ -21,6 +21,8 @@ var passportConfig = require('./passport-config');
 var userInfo = require('./routes/user-info');
 var app = express();
 var httpServer = http.createServer(app);
+var eProxy = require('express-http-proxy');
+
 
 /**********************************************************************
        SETTING UP EXRESS SERVER
@@ -63,6 +65,7 @@ if (redisCreds) {
 }
 app.use(cookieParser('predixsample'));
 app.use(session(sessionOptions));
+app.get('/timeseries', function(req, res){ res.json({done : true})}, eProxy('https://winddata-service-demo.run.aws-usw02-pr.ice.predix.io/services/windservices/yearly_data/sensor_id/Compressor-2015:CompressionRatio'));
 
 console.log('UAA is configured?', config.isUaaConfigured());
 if (config.isUaaConfigured()) {
@@ -185,7 +188,7 @@ app.get('/favicon.ico', function (req, res) {
 });
 
 app.get('/config', function(req, res) {
-  let title = "Predix WebApp Starter";
+  let title = "Nec sample app";
   if (config.isAssetConfigured()) {
     title = "RMD Reference App";
   }

@@ -30,7 +30,7 @@
     <header role="banner">
       <div class="viewport flex flex--justify flex--middle">
         <h3>
-          <ge-svg-logo class="u-mr--"></ge-svg-logo> [[appHeader]]
+          [[appHeader]]
         </h3>
         <div>
           <px-login style="margin-left: auto;"></px-login>
@@ -89,7 +89,17 @@
             active="[[_simple-assetActive]]"
             element-href="/elements/views/simple-asset-view.html">
          </px-view>
-
+         
+          <!-- /testing route and view -->
+          <app-route
+            route="[[_route]]"
+            pattern="/baba"
+            active="{{_babaJi}}">
+          </app-route>
+          <px-view
+            active="[[_babaJi]]"
+            element-href="/elements/views/babaji-view.html">
+         </px-view>
         </main>
 
       </div>
@@ -131,9 +141,9 @@
           value: function() {
             return [
               {
-                "label": "Asset Monitoring",
-                "path": "/rmd",
-                "icon": "fa-line-chart"
+                "label": "Baba ji",
+                "path": "/baba",
+                "icon": "fa-user-times"
               },
               {
                 "label": "About",
@@ -141,13 +151,18 @@
                 "icon": "fa-info-circle"
               }
               //Uncomment this block to show the Simple Asset navigation item on the menu.
-              /* // asset-nav-item
+               // asset-nav-item
               ,{
                 "label": "Simple Asset",
                 "path": "/simple-asset",
                 "icon": "fa-sitemap"
+              }, 
+              {
+                "label": "Dashboard",
+                "path": "/rmd",
+                "icon": "fa-tachometer"
               }
-              // end asset-nav-item */
+              // end asset-nav-item 
             ]
           }
         },

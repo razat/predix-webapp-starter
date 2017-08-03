@@ -6,7 +6,7 @@
     "assetId": "compressor-2017",
     "description": "Reciprocating Compressor",
     "filter": "group=/group/plant-richmond-refinery",
-	"isMock": true,
+	  "isMock": true,
     "group": "/group/plant-richmond-refinery",
     "assetTag": {
       "crank-frame-compressionratio": {
