@@ -17,20 +17,61 @@
           <div class="markdown-html"></div>
         </marked-element>      </div>
     </px-card>
-    <iron-ajax id="aboutContentAjaxEl" handle-as="text"></iron-ajax>
-  </template>
+<!--     <iron-ajax id="aboutContentAjaxEl" handle-as="text"></iron-ajax>
+ -->  </template>
   <script>
     Polymer({
       is: 'about-view',
       properties: {},
       ready: function() {
-        var that = this;
-        this.$.aboutContentAjaxEl.url = "/docs";
+        // var that = this;
+        // this.$.aboutContentAjaxEl.url = "/docs";
 
-        this.$.aboutContentAjaxEl.addEventListener('response', function(evt) {
-          that.$.aboutContentMarkdown.markdown = evt.detail.response;
-        });
-        this.$.aboutContentAjaxEl.generateRequest();
+        // this.$.aboutContentAjaxEl.addEventListener('response', function(evt) {
+        //   that.$.aboutContentMarkdown.markdown = evt.detail.response;
+        // });
+        // this.$.aboutContentAjaxEl.generateRequest();
+        this.$.aboutContentMarkdown.markdown = `  # Parva ademptum herbosaque tenuique vicem
+
+## In hoc prius nec tu ait metu
+
+Lorem **markdownum et Cepheus** quale madidisque et inque specus dicere, cum
+populi ad etiam verba. Tibi **in** inops **intremuere Aeaciden amata**
+flammiferumque Phrygiis. Visa tremens. Turba circa petit Cynthia, pertimui ad
+custos notas, de.
+
+1. Albus restabat
+2. Inquit ab inmota suspiria quinta
+3. Vanaque nec fiducia poenaededidit mille
+4. Tendere progenies
+
+## Eurytidae acumine posse
+
+Exit sis nam dolentibus nihil transferre appellantque hanc viderunt *modo*.
+Rapidum artus quoque crimen arasque! Monstris quam causamque spicula cedentem
+*portaque fuit est* ponti inprudens? Portae fugientem esse concussae **vultusque
+videt denique** videtur Bacchi post, vocant nunc gurgite illas conplexusque
+femineae des? Clamor illi, sic saetae pignora totis: cladis soleo, formosus
+infantem.
+
+Potentia abit satis, turpis: *sed* tum thalamos uror. Nec secum nate latus
+lumina meri, hoc si somno nec petiti amictu, congestaque squamis staret! Quatit
+fidissime venabula validos, putet lacus: ibi tamen, ramis, timentur. Neque
+sperat vocalibus ipse sit rettuleram formae diramque ab verba arcus. In dolores
+[obstipuit matres signans](http://google.com/) oscula loca locum si medio
+solebant curru extremo?
+
+## Amor unco mensam tenax cornua obsita
+
+Duo dure cum patrios populusque *Danais pectora corde* mirantia tardus: et. Ait
+priorum, parabant decor status ab Libys deus turba dilexit.
+
+Et arce ait functo pudore virgine insignia, in vetus inveniunt trahit dominos
+avito nuda recessus amoris coniectum. Formosos congreditur ecce?
+
+Sed et alimenta mearent septemflua mihi corpore insidiis inludens ipso
+circumstant mens cucurri. Canentis posito. Obruta corpore videri sono postquam
+quam submittere cuspis generi ea urget pinus rogando, at?`
       }
     });
   </script>
