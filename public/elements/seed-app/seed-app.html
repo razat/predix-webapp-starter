@@ -93,12 +93,12 @@
           <!-- /testing route and view -->
           <app-route
             route="[[_route]]"
-            pattern="/user"
-            active="{{_babaJi}}">
+            pattern="/sample"
+            active="{{_sample}}">
           </app-route>
           <px-view
-            active="[[_babaJi]]"
-            element-href="/elements/views/babaji-view.html">
+            active="[[_sample]]"
+            element-href="/elements/views/sample-view.html">
          </px-view>
         </main>
 
@@ -141,8 +141,8 @@
           value: function() {
             return [
               {
-                "label": "User Data",
-                "path": "/user",
+                "label": "sample Data",
+                "path": "/sample",
                 "icon": "fa-user-times"
               },
               {
@@ -189,7 +189,7 @@
         // set default route to /rmd
         var l = window.location;
         if((l.hash === "#/" || l.hash === "") && l.pathname === "/") {
-          l.hash = "/user";
+          l.hash = "/sample";
         }
       },
 

@@ -5,7 +5,7 @@
     "public/elements/views/about-view.html",
     "public/elements/views/rmd-view.html",
     "public/elements/timeseries-chart/timeseries-chart.html",
-    "public/elements/views/babaji-view.html"
+    "public/elements/views/sample-view.html"
   ],
   "sources": [
     "public/elements/**/*",
